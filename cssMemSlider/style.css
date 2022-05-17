@@ -65,9 +65,8 @@ a {
     opacity: .7;
 }
 
-.label::before {
-    content: '';
-    display: block;
+.dot-area {
+    display: inline-block;
     width: 25px;
     height: 25px;
     position: relative;
@@ -75,9 +74,18 @@ a {
     right: 5px;
 }
 
+.dot-area:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
 .label:hover {
     opacity: 1;
     cursor: pointer;
+}
+
+.label:active {
+    transform: scale(1.4);
 }
 
 #step1:checked~.bottom-wrapper #control-nav1 #dot1,
