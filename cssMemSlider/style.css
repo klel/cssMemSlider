@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: 'Indie Flower', Helvetica, sans-serif;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 798px;
+    width: 100%;
+    min-width: 320px;
+    padding: 0 20px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+li,
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.step {
+    display: none;
+}
+
+.bottom-wrapper {
+    padding: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.control {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.label {
+    /* position: absolute; */
+    width: 14px;
+    height: 14px;
+    background: #c8c8c8;
+    border-radius: 100%;
+    transition: all 400ms cubic-bezier(0.36, 0.1, 0.16, 1);
+    opacity: .7;
+}
+
+.dot-area {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    bottom: 5px;
+    right: 5px;
+}
+
+.dot-area:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.label:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.label:active {
+    transform: scale(1.4);
+}
+
+#step1:checked~.bottom-wrapper #control-nav1 #dot1,
+#step2:checked~.bottom-wrapper #control-nav1 #dot2,
+#step3:checked~.bottom-wrapper #control-nav1 #dot3,
+#step4:checked~.bottom-wrapper #control-nav1 #dot4 {
+    background: #5f14c8;
+    opacity: 1;
+}
+
+.slider {
+    display: flex;
+    max-width: 800px;
+    width: 100%;
+    height: 360px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.slider_main {
+    width: 100%;
+    height: 360px;
+    overflow: hidden;
+}
+
+.slider_main_list {
+    position: relative;
+    width: 100%;
+    height: 360px;
+    transition: all 400ms cubic-bezier(0.36, 0.1, 0.16, 1);
+}
+
+.slider_main_item {
+    position: absolute;
+    width: 600px;
+    height: 360px;
+    transition: all 400ms cubic-bezier(0.36, 0.1, 0.16, 1);
+}
+
+.slider_main_item:hover {
+    opacity: 0.7;
+}
+
+.slider_main_item:nth-child(1) {
+    left: 0px;
+}
+
+.slider_main_item:nth-child(2) {
+    left: 600px;
+}
+
+.slider_main_item:nth-child(3) {
+    left: 1200px;
+}
+
+.slider_main_item:nth-child(4) {
+    left: 1800px;
+}
+
+.slider_thumbnail {
+    width: 200px;
+    height: 360px;
+    overflow: hidden;
+}
+
+.slider_thumbnail_list {
+    width: 200px;
+    height: 360px;
+    transition: all 400ms cubic-bezier(0.36, 0.1, 0.16, 1);
+}
+
+.slider_thumbnail_item {
+    width: 200px;
+    height: 120px;
+}
+
+
+/* .comment-item-base {
+    opacity: 0;
+}
+
+#step1:checked~#phrase1,
+#step2:checked~#phrase2,
+#step3:checked~#phrase3,
+#step4:checked~#phrase4 {
+    opacity: 1;
+} */
+
+.comment_block {
+    text-align: center;
+    height: 20px;
+    overflow: hidden;
+}
+
+.comments {
+    transition: all 400ms cubic-bezier(0.36, 0.1, 0.16, 1);
+}
+
+.item_1 {
+    background: url(https://cdn.devdojo.com/images/May2017/10-awesome-programming-jokes.jpg?w=1280&h=720&fit=crop) no-repeat;
+    background-size: cover;
+}
+
+.item_2 {
+    background: url(https://miro.medium.com/max/1400/1*8R-XmPn8hEjZ2Hil84D4JA.png) no-repeat;
+    background-size: cover;
+}
+
+.item_3 {
+    background: url(https://miro.medium.com/max/1400/1*r1iNSxVbeRV9oyRbzQm0FQ.jpeg) no-repeat;
+    background-size: cover;
+}
+
+.item_4 {
+    background: url(https://www.freelancinggig.com/blog/wp-content/uploads/2018/12/j-4-1.jpg) no-repeat;
+    background-size: cover;
+}
+
+.step1:checked~.slider .slider_main_list {
+    transform: translateX(0px);
+}
+
+.step1:checked~.slider .slider_thumbnail_list {
+    transform: translateY(-120px);
+}
+
+.step1:checked~.bottom-wrapper .comment_block.comments {
+    transform: translateY(0px);
+}
+
+.step2:checked~.slider .slider_main_list {
+    transform: translateX(-600px);
+}
+
+.step2:checked~.slider .slider_thumbnail_list {
+    transform: translateY(-240px);
+}
+
+.step2:checked~.bottom-wrapper .comment_block #comments {
+    transform: translateY(-20px);
+}
+
+.step3:checked~.slider .slider_main_list {
+    transform: translateX(-1200px);
+}
+
+.step3:checked~.slider .slider_thumbnail_list {
+    transform: translateY(-360px);
+}
+
+.step3:checked~.bottom-wrapper .comment_block #comments {
+    transform: translateY(-45px);
+}
+
+.step4:checked~.slider .slider_main_list {
+    transform: translateX(-1800px);
+}
+
+.step4:checked~.slider .slider_thumbnail_list {
+    transform: translateY(-480px);
+}
+
+.step4:checked~.bottom-wrapper .comment_block #comments {
+    transform: translateY(-70px);
+}
+
+@media screen and (max-width: 640px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    .slider_thumbnail {
+        display: none;
+    }
+    .bottom-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
